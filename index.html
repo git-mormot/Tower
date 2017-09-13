@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tower</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="playback-panel">
+			<div class="play">
+				<div class="btn">
+					<i class="fa fa-play"></i>
+				</div>
+			</div>
+			<div class="stop">
+				<div class="btn">
+					<i class="fa fa-stop"></i>
+				</div>
+			</div>
+			<div class="speed-scale">
+				<span id="speed-scale-value" style="color: #fff; width: 80px; display: inline-block;">Speed(*10):</span>
+				<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="1"/>
+			</div>
+			
+			<div class="vibra-scale">
+				<span id="vibra-scale-value" style="color: #fff; width: 80px; display: inline-block;">Vibra(*1):</span>
+				<input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="1"/>
+			</div>
+		</div>
+		<div class="record-time">
+			<span id="record-time-value" style="color: #fff; width: 332px; display: inline-block; padding-top: 12px; margin-left: 10px;"></span>
+		</div>
+		<div id="container"></div>
+		<div class="plotter">
+			<div style="left: 50%; top: 10px; margin-left: -7px;">N</div>
+			<div style="right: 0; top: 50%;">E</div>
+			<div style="bottom: 10px; left: 50%; margin-left: -7px;">S</div>
+			<div style="left: 0; top: 50%;">W</div>
+			<div id="plotter-switch">Historic</div>
+			<canvas id="historic-view-container" width="300" height="300"></canvas>
+			<canvas id="live-view-container" width="300" height="300" style="display: none;"></canvas>
+		</div>
+
+		<div class="twist-stat">
+			<span id="twist-stat-value" style="color: #fff; width: 332px; display: inline-block; padding-top: 12px; margin-left: 10px;"></span>
+		</div>
+		<div class="plotter twist">
+			<div style="left: 50%; top: 10px; margin-left: -7px;">N</div>
+			<div style="right: 0; top: 50%;">E</div>
+			<div style="bottom: 10px; left: 50%; margin-left: -7px;">S</div>
+			<div style="left: 0; top: 50%;">W</div>
+			<div id="twist-angle-value"></div>
+			<div id="twist-label">Twist</div>
+			<canvas id="twist-view-container" width="300" height="300"></canvas>
+		</div>
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap-slider.min.js"></script>
+
+		<script src="js/three.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/stats.min.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/paper-core.js"></script>
+		<script src="js/Tower.js"></script>
+		<script src="js/script.js"></script>
+
+	</body>
+</html>

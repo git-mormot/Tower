@@ -1,0 +1,150 @@
+[8/10/2017 5:17:13 PM] John Scott: customer is pleased.  can you  remove the shadow?  can you make the reference pole and guide ball smaller in circumference, say half the current size?  change all red colors to dark blue metallicl.  we need red as an alarm indicator (new code coming).
+[8/10/2017 5:17:47 PM] John Scott: can you check code into subversion?
+[8/10/2017 5:48:41 PM] John Scott: ken, ignore the previous requests.  client is still discussing (and pleased).
+[1:51:00 AM] Kenneth Davis: previous requests ?
+[1:51:18 AM] Kenneth Davis: changing the color and removing the shadow?
+[1:51:32 AM] Kenneth Davis: and changing the size ?
+[5:09:38 AM] John Scott: yes.  we are going to prepare detail list of changes with client.   they like your work.
+[5:11:27 AM] Kenneth Davis: good
+[5:11:57 AM] Kenneth Davis: please let me know if ready.
+[5:17:26 AM] John Scott: can i add you to the subversion email notification when one of us checks in a file?  i’ll need your email address.
+[5:18:03 AM] Kenneth Davis: my email address is kennethdavis277@gmail.com
+[5:18:17 AM] Kenneth Davis: oh BTW, until that, what should I do ?
+[5:37:47 AM] John Scott: think about how to show displacement on the polar plot.  need to see how many feet/inches the tower moves.  also, think about a small legend in the lower left hand corner that looks straight down the tower, creating a kind of polar plot of the motion.  the legend can be unmovable view
+[5:38:39 AM] John Scott: if the vibration scale (called displacement in the tower business) changes then the polar graph ought to scale proportionatly.
+[5:43:34 AM | Edited 5:42:41 AM] Kenneth Davis: you mean small legend is small top view of tower that overlays current 3D Tower Viewer?
+[5:43:57 AM | Edited 5:43:21 AM] Kenneth Davis: (with ortho projection.)
+[5:47:00 AM] John Scott: yes.  regarding projection, use the projection that enables the engineer to clearly see linear displacement in ns/ew (neds).  if a tower swings, say, 4 feet, that is a BIG problem.  also, the client asked for no guide ball in the legend.  probably no shadow in legend, as well.
+[5:50:11 AM] Kenneth Davis: ok I see
+[5:50:13 AM] Kenneth Davis: let me try.
+[5:58:53 AM] John Scott: in the legend the client wants to be able to track a history of where the top of the tower moved … a kind of shadow, so to speak.
+[6:00:04 AM] Kenneth Davis: like shadow ?
+[6:00:21 AM] Kenneth Davis: I think legend is 2D view.
+[6:02:50 AM] John Scott: yes, 2d view would be fine.  here is a polar plot showing history: http://sas-and-r.blogspot.com/2012/04/example-925-its-been-mighty-warm-winter.html
+[6:05:11 AM] John Scott: the idea is to quickly see in which direction the tower tended to move.  if the tower tends to lean in one direction (like a strong north/south wind) this typically is better than if the tower sways in, say, a circle.
+[6:06:40 AM] John Scott: user could toggle the legend between live view and historical view.
+[6:07:40 AM] Kenneth Davis: I think that legend will have their own playback controller.
+[6:08:20 AM] Kenneth Davis: and what is difference  between live and historical view ?
+[6:10:05 AM] John Scott: live view tracks the 3d view, so no need for playback controller, since 3d has a controller. the   historical view would just plot the live view.  i am not sure how change the historical view if rewind is added controller.
+[6:10:58 AM] John Scott: the live view is just an immovable camera looking down the tower, maybe with a different projection.
+[6:12:21 AM] John Scott: the historical view plots each displacement step, so it may get crowded.
+[6:15:53 AM] Kenneth Davis: if so, what is current 3D tower view ?
+[6:17:04 AM] Kenneth Davis: it have movable camera.( I mean user can navigate the tower with mouse, and I think that data is historical data )
+[6:21:17 AM] John Scott: not sure i understand.  the simplest legend would be a view straight down the tower that tracks the live motion.  so as the tower sways, say, to the east in the 3d view then the small legend will show the top of the  green tower moving to the right.
+[6:23:41 AM] John Scott: the historical legend (in location as live legend) will plot a point at the ns/ew location in essentially a 2d view.  if the engineer can quickly see the oscillations (which are very bad) versus simple sway in one direction.
+[6:30:29 AM] John Scott: oscillations over time are very, very stressful on towers.  imaging bending a paper clip very slowly in the same spot.  with very little force the paperclip will snap at the spot you are applying the force. in particular, slow, repetitive oscillations over time can quickly cause the tower to fracture, despite not visibly moving much.  a historical polar plot will will quickly show these oscillations, wheres in a “live” 3d view these oscillations are not so clear.  now, we also have alarms that track these oscillations in real time without the 2/3d code you are writing.  your code simply clarifies the motion at the tower.
+[6:32:54 AM] John Scott: “if so, what is current 3D tower view ?”  the movable camera view.
+[6:33:23 AM] Kenneth Davis: ok I understand well.
+[6:33:29 AM] Kenneth Davis: ;)
+[6:37:31 AM] Kenneth Davis: I will make a demo that reflects your description and my idea on it.
+[6:38:37 AM] John Scott: at some point i will need to integrate your code into our code.   in the short run i don’t want to bog you down.  i’m pretty sure i can make your code a template that jquery modifies on start up.  also, can you sign a non-disclosure?
+[6:39:35 AM] Kenneth Davis: yes I can.
+[6:40:39 AM] John Scott: cool.  this is audacious product.  you are only seeing a small part.
+[6:43:08 AM] Kenneth Davis: what can I do now ?
+[6:43:54 AM] John Scott: decrease the diameter of the reference  and guide ball by half
+[6:44:19 AM] John Scott: can you soften the edges of the shadow?
+[6:45:41 AM] Kenneth Davis: you said me to remove the shadow .
+[6:46:09 AM] John Scott: yep, but then i said disregard those instructions.
+[6:46:32 AM] Kenneth Davis: oh I see
+[6:48:03 AM] John Scott: we are going to have a long discuss with client probably monday.  at first they didn’t like the shadow (they didn’t know what is was), but later they liked the concept.  is softening the shadow hard to do?  is so then don’t worry about the shadow too much.
+[6:49:27 AM] Kenneth Davis: let me try for softening the shadow.
+[6:49:49 AM] Kenneth Davis: how about live and historical plot ?
+[6:50:15 AM] John Scott: yes, go ahead and cut code.
+[6:52:18 AM] Kenneth Davis: ok
+
+
+
+=============================================================================================================================================================
+[8/26/2017 9:22:54 AM] John Scott: presentation of scaled polar went very well.  looks like we ought to have more work for you.  i am going to close the current project and writeup up a new spec.
+[8/26/2017 3:51:33 PM | Edited 3:51:33 PM] Kenneth Davis: good
+[8/26/2017 3:51:55 PM] Kenneth Davis: but I think its good to keep working on this contract.
+[8/26/2017 3:52:20 PM] John Scott: (cool)
+[8/26/2017 3:52:46 PM] Kenneth Davis: ?
+[8/26/2017 3:54:24 PM] John Scott: why not start new contract. we are going out of scope for this contract?
+[8/26/2017 3:55:44 PM] John Scott: we are just at the beginning.  we have  much more complex code. have you coded splines?
+[8/26/2017 3:56:29 PM] Kenneth Davis: you mean Bezier or Spline curve ?
+[8/26/2017 4:00:28 PM] John Scott: yes.  we want the tower to sway more naturally.
+[8/26/2017 4:01:04 PM] John Scott: also, the polar grid will show alarm states with colors.
+[8/26/2017 4:01:41 PM] Kenneth Davis: I understand.
+[8/26/2017 4:02:11 PM] Kenneth Davis: if that things is implemented, this project will be great.
+[8/26/2017 4:02:37 PM] John Scott: also,  need new legend in right corner to show twist/sway
+[8/26/2017 4:03:25 PM] Kenneth Davis: oh I got.
+[8/26/2017 4:06:55 PM] Kenneth Davis: please make a doc with above ones and others.
+[8/26/2017 4:07:59 PM] John Scott: yep.  will write after i wire your current code into our gui, probably towards end of next week.  i am i  austin texas, near the hurricane. by the way.
+[8/26/2017 4:10:25 PM] Kenneth Davis: oh
+[8/26/2017 4:10:51 PM] Kenneth Davis: when can I work on that project ?
+[8/26/2017 4:12:46 PM] John Scott: maybe wednesday or Thursday i will write spec..   client wants weekly progress. i get REALLY busy. and pulled in many directions. lots and lots of code to write.
+[8/26/2017 4:13:51 PM] Kenneth Davis: oh
+[8/26/2017 4:14:41 PM] John Scott: at some point we need have you sign an nda to work directly from the whole project.
+[8/26/2017 4:15:09 PM] John Scott: the whole project is very audacious.
+[8/26/2017 4:15:33 PM | Edited 4:15:35 PM] Kenneth Davis: I know. and I will do so.
+[8/26/2017 4:17:44 PM] John Scott: brush up on animating splines ... we got some mimd blowing coding coming up.
+[8/26/2017 4:18:43 PM] Kenneth Davis: can I start work on animating spline ?
+[8/26/2017 4:19:49 PM] John Scott: ok, you talked me into the work.
+[8/26/2017 4:22:24 PM] Kenneth Davis: you start new contract in next Wednesday ?
+[8/26/2017 4:23:08 PM] John Scott: well, now i am confused.
+[8/26/2017 4:23:20 PM] John Scott: do you want to start on spline now?
+[8/26/2017 4:23:40 PM] John Scott: if so then that would have to be on current contract.
+[8/26/2017 4:23:46 PM] John Scott: right.
+[8/26/2017 4:24:03 PM] John Scott: will take me a several hours to write new spec.
+[8/26/2017 4:24:18 PM] John Scott: several, concentrated  hours.
+[8/26/2017 4:25:01 PM] John Scott: do you want to wait for second contract before starting n spline?
+[8/26/2017 4:25:43 PM] Kenneth Davis: I will follow your idea.
+[8/26/2017 4:25:47 PM] John Scott: we may not need a spline
+[8/26/2017 4:26:52 PM] John Scott: just need a smooth arc from tower base  to tip that sways more naturally than a stiff monopole.
+[8/26/2017 4:27:12 PM] Kenneth Davis: I know it.
+[8/26/2017 4:27:14 PM] Kenneth Davis: ;)
+[8/26/2017 4:27:42 PM] John Scott: give me sec to find a picture
+[8/26/2017 4:28:03 PM] Kenneth Davis: ok
+[8/26/2017 4:33:04 PM] Kenneth Davis: can I set spline segment count by myself ?
+[8/26/2017 4:33:48 PM] John Scott: sure.  as long as animation looks,like picture i just sent
+[8/26/2017 4:34:14 PM] Kenneth Davis: ok I got.
+[8/26/2017 4:34:45 PM] Kenneth Davis: can I work on that task in current contract ?
+[8/26/2017 4:38:04 PM] John Scott: yes.
+[8/26/2017 4:39:13 PM] John Scott: eventually we will do all three mode shapes of the tower.  the first shape is a simple sway.
+[8/26/2017 4:39:58 PM] John Scott: you are doing mode1 in the diagram, the simple sway.
+[8/26/2017 4:41:05 PM] John Scott: can you code 25 nodes in the spline?  each node represents a segment in the tower.
+[8/26/2017 4:42:20 PM] John Scott: yes
+[8/26/2017 4:49:39 PM] Kenneth Davis: is there datas for all that 25 joints ?
+[8/26/2017 4:50:02 PM] Kenneth Davis: i mean from ajax.
+[8/26/2017 4:50:56 PM] John Scott:  o, just divide tower height in json by 25.
+[8/26/2017 4:51:47 PM] Kenneth Davis: I got.
+[8/26/2017 4:52:02 PM] Kenneth Davis: I will have 25 joints for mode 1.
+[8/26/2017 4:53:13 PM] John Scott: hang on for a minute.  let me find the displacement equation for,each segment, as a function of the displacement of the top of the tower.
+[8/26/2017 4:53:32 PM] Kenneth Davis: ok
+[8/26/2017 5:01:38 PM] John Scott: i was wrong.
+[8/26/2017 5:02:29 PM] John Scott: look at column "mode 1" in picture i sent you, to the left of the diagram
+[8/26/2017 5:03:59 PM] John Scott: the 25 values in the mode1 column are the multipliers for the displacement at each pf the 25 tower segments.
+[8/26/2017 5:04:42 PM] John Scott: the top of the tower is 1.0 and the bottom of the tower is 0.0.
+[8/26/2017 5:05:29 PM] Kenneth Davis: right.
+[8/26/2017 5:05:37 PM] Kenneth Davis: oh I have some idea for mode 1.
+[8/26/2017 5:05:51 PM] John Scott: about half way down the tower at joint (node) 13 the multiplier is .217993.
+[8/26/2017 5:06:24 PM] John Scott: mode1 is,the simplest swaying motion a tower makes when the wind is blowing.
+[8/26/2017 5:07:11 PM] John Scott: the mode1 table will be in the json payload and is specific per tower.
+[8/26/2017 5:08:05 PM] John Scott: i can send you the table as a text file, but need to get to laptop first.
+[8/26/2017 5:09:12 PM] John Scott: or i can send you a new json payload, but that will probably be tomorrow.
+[8/26/2017 5:10:39 PM] Kenneth Davis: for now, send me text file of it.
+[8/26/2017 5:11:02 PM] John Scott: give me a minute.
+[8/26/2017 5:11:06 PM] Kenneth Davis: I will be build some test app.
+[8/26/2017 5:11:25 PM] John Scott: i am messaging from an ipad
+[8/26/2017 5:11:38 PM] Kenneth Davis: one more, is that table values constant ?
+[8/26/2017 5:12:51 PM] John Scott: no, but constant per tower.  the table is a,physical characteristic of the tower.
+[8/26/2017 5:13:15 PM] Kenneth Davis: oh i got.
+[8/26/2017 5:13:38 PM | Edited 5:15:13 PM] Kenneth Davis: and I think we can use spline interpolation to simulate it.
+[8/26/2017 5:14:45 PM] Kenneth Davis: of course, it will not correct, but it will be in visually
+[8/26/2017 5:15:22 PM] John Scott: yes, the mode1 table will not change during animation.
+[8/26/2017 5:15:53 PM] John Scott: the mode1 table measures the stiffness of the tower, which does not change during the animation
+[8/26/2017 5:17:10 PM] John Scott: ken, give 10 minutes to write from my laptop.
+[8/26/2017 5:17:22 PM] Kenneth Davis: oh sorry, please.
+[8/26/2017 5:17:32 PM] John Scott: my thumbs are tired
+[8/26/2017 5:17:57 PM] Kenneth Davis: :$
+[8/26/2017 5:28:02 PM] John Scott: here is the text version of the displacement multiplier in mode1.
+[8/26/2017 5:29:45 PM] Kenneth Davis: I got it.
+[8/26/2017 5:29:59 PM] Kenneth Davis: I will give it a try.
+[8/26/2017 5:30:11 PM] John Scott: i will offline for a few hours
+[8/26/2017 5:30:32 PM] Kenneth Davis: if you have no other problems, please start the current contract.
+[8/26/2017 5:30:49 PM] John Scott: ??
+[8/26/2017 5:30:56 PM] John Scott: oh, yes
+[8/26/2017 5:31:00 PM] John Scott: give me bit
+[8/26/2017 5:31:44 PM] John Scott: restarted the contract
+[8/26/2017 5:32:40 PM] Kenneth Davis: I confirm it. thanks.
