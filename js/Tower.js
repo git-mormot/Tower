@@ -151,6 +151,7 @@ var Tower = function( pScene, pConfig ) {
 				side: THREE.DoubleSide
 			} );
 
+			// git is interesting.
 			// FIX : optimize following code.
 
 			var text = _generateLabelMesh( 'N', 10, 2, -Math.PI * 0.5, 0, matLite );
