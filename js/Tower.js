@@ -151,53 +151,6 @@ var Tower = function( pScene, pConfig ) {
 				side: THREE.DoubleSide
 			} );
 
-			// var shapes = font.generateShapes( 'N', 10, 2 );
-			// var geometry = new THREE.ShapeGeometry( shapes );
-			// geometry.computeBoundingBox();
-			// var xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-			// geometry.translate( xMid, 0, 0 );
-			// geometry.rotateX( -Math.PI * 0.5 );
-			// textShape_N.fromGeometry( geometry );
-			// var text = new THREE.Mesh( textShape_N, matLite );
-			// text.position.set( 0, POLAR_GRID_HEIGHT, -TOWER_HEIGHT - 5.0 );
-			// g_scene.add( text );
-
-			// shapes = font.generateShapes( 'E', 10, 2 );
-			// geometry = new THREE.ShapeGeometry( shapes );
-			// geometry.computeBoundingBox();
-			// xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-			// geometry.translate( xMid, 0, 0 );
-			// geometry.rotateX( -Math.PI * 0.5 );
-			// geometry.rotateY( -Math.PI * 0.5 );
-			// textShape_E.fromGeometry( geometry );
-			// text = new THREE.Mesh( textShape_E, matLite );
-			// text.position.set( TOWER_HEIGHT + 5.0, POLAR_GRID_HEIGHT, 0 );
-			// g_scene.add( text );
-
-			// shapes = font.generateShapes( 'S', 10, 2 );
-			// geometry = new THREE.ShapeGeometry( shapes );
-			// geometry.computeBoundingBox();
-			// var xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-			// geometry.translate( xMid, 0, 0 );
-			// geometry.rotateX( -Math.PI * 0.5 );
-			// geometry.rotateY( Math.PI );
-			// textShape_S.fromGeometry( geometry );
-			// text = new THREE.Mesh( textShape_S, matLite );
-			// text.position.set( 0, POLAR_GRID_HEIGHT, TOWER_HEIGHT + 5.0 );
-			// g_scene.add( text );
-
-			// shapes = font.generateShapes( 'W', 10, 2 );
-			// geometry = new THREE.ShapeGeometry( shapes );
-			// geometry.computeBoundingBox();
-			// xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-			// geometry.translate( xMid, 0, 0 );
-			// geometry.rotateX( -Math.PI * 0.5 );
-			// geometry.rotateY( Math.PI * 0.5 );
-			// textShape_W.fromGeometry( geometry );
-			// text = new THREE.Mesh( textShape_W, matLite );
-			// text.position.set( -TOWER_HEIGHT - 5.0, POLAR_GRID_HEIGHT, 0 );
-			// g_scene.add( text );
-
 			// FIX : optimize following code.
 
 			var text = _generateLabelMesh( 'N', 10, 2, -Math.PI * 0.5, 0, matLite );
