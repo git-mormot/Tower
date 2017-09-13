@@ -1,5 +1,6 @@
 // added by kenneth davis
 // this is for testing git merge tool.
+// will be changed for optimizing.
 var CurveTower = function() {
 	var g_tower_curve = new THREE.CatmullRomCurve3();
 	var g_tower_obj = new THREE.Mesh();
