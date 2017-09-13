@@ -198,6 +198,8 @@ var Tower = function( pScene, pConfig ) {
 			// text.position.set( -TOWER_HEIGHT - 5.0, POLAR_GRID_HEIGHT, 0 );
 			// g_scene.add( text );
 
+			// will be removed soon.
+
 			// FIX : optimize following code.
 
 			var text = _generateLabelMesh( 'N', 10, 2, -Math.PI * 0.5, 0, matLite );
