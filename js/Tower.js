@@ -359,22 +359,6 @@ var Tower = function( pScene, pConfig ) {
 	}
 
 	function tick() {
-		// var scale = scope.vibra_scale;
-		// var dx = g_anim_data.x[ g_current_frame ] * scale; 
-		// var dy = g_anim_data.y[ g_current_frame ] * scale;
-		// var rot_z = Math.atan( dx / 160.0 );
-		// var rot_x = Math.atan( dy / 160.0 );
-
-		// g_tower_obj.rotation.set( rot_x, 0.0, rot_z );
-		// g_tick_mark_obj.position.set( -dx, 1.0, dy );
-
-		
-		// drawHistoricPlotter( g_current_frame );
-		// // drawLiveTopDownPlotter( g_current_frame );
-
-		// var date = new Date( g_anim_data.time[ g_current_frame ] );
-
-		// $('#record-time-value').text( date.toGMTString() );
 
 		g_current_frame = ( g_current_frame + 1 ) % g_anim_data.x.length;
 		g_current_frame_ex = ( g_current_frame_ex + 1 ) % g_anim_data_ex.twist.length;
