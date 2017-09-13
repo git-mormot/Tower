@@ -60,7 +60,6 @@ var Tower = function( pScene, pConfig ) {
 	var g_remain_time = 0;
 	var g_current_frame = 0;
 	var g_current_frame_ex = 0;
-	// var g_date = new Date();
 
 	var g_historic_plot_ctx;
 	var g_live_plot_ctx;
