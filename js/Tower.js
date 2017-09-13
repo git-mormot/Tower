@@ -1,6 +1,3 @@
-// test git branch test.
-// this is master.
-// by kenneth.
 var CurveTower = function() {
 	var g_tower_curve = new THREE.CatmullRomCurve3();
 	var g_tower_obj = new THREE.Mesh();
